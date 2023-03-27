@@ -1,0 +1,9 @@
+<div class="wrapper">
+
+  <div class="list-etudiant">
+<app-list-note [etudiantList]="etudiantListt"(selected)="selectedEtudiant($event)" ></app-list-note>
+  </div>
+  <div class="list-note">
+    <app-table-note-etudiant [currentNote]="note" ></app-table-note-etudiant>
+</div>
+</div>

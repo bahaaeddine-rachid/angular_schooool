@@ -1,0 +1,49 @@
+<div mat-dialog-content>
+
+
+  <form  >
+    <div >
+
+      <div>
+
+        <label for="nomEtudiant" >Nom Etudiant:</label>
+        <input  type="text" [(ngModel)]="etudiant.nom" class="form-control" name="nomEtudiant" >
+
+      </div>
+      <div >
+        <label for="prenomEtudiant">Prenom Etudiant:</label>
+        <input type="text" [(ngModel)]="etudiant.prenom" class="form-control" name="prenomEtudiant">
+      </div>
+    </div>
+    <div >
+      <div>
+        <label >Date De Naissance:</label>
+        <input type="date"   [(ngModel)]="etudiant.datedenaissance"  class="form-control" >
+      </div>
+  <div>
+    <label >Sexe:</label>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" [(ngModel)]="etudiant.sexe" name="inlineRadioOptions" id="Male" value="Male" name="sexe">
+        <label class="form-check-label" for="Male">Male:</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" [(ngModel)]="etudiant.sexe" name="inlineRadioOptions" id="Female" value="Female" name="sexe">
+        <label class="form-check-label" for="Female">Female:</label>
+      </div>
+    </div>
+      <div>
+        <label >filiere:</label>
+
+        <select  class="form-control" [value]="filiere.abreviation"  name="filiereId" [(ngModel)]="etudiant.filiereId">
+          <option  value="{{filiere.id}}"  *ngFor="let filiere of filieres">
+            {{filiere.abreviation}}
+          </option>
+        </select>
+      </div>
+
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button type="submit" class="btn btn-primary" (click)="saveEtudiant()">Add Etudiant</button>
+      <button mat-button  type="submit" class="btn btn-primary" (click)="onNoClick()">Cancel</button>
+    </div>
+

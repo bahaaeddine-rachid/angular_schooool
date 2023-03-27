@@ -1,0 +1,10 @@
+<div class="wrapper">
+
+  <div class="list-matiere">
+<list-matiere [listMatiere]="listMatiere" (selected)="selectedMatiere($event)"></list-matiere>
+  </div>
+  <div class="list-note">
+    <app-table-note-matiere [currentMatiere]="matiere" ></app-table-note-matiere>
+</div>
+</div>
+

@@ -1,0 +1,15 @@
+<!-- <div class="listwrapper" >
+
+<ng-container *ngFor="let matiere of listMatiere">
+  <app-unematiere [unematiere]="matiere" (selected)="selectedMatiere($event)"></app-unematiere>
+</ng-container>
+
+</div> -->
+
+<div class="list-group">
+  <ng-container *ngFor="let matiere of listMatiere">
+    <app-unematiere class="list-group-item list-group-item-action" (selected)="selectedMatiere($event)" [unematiere]="matiere"></app-unematiere>
+  </ng-container>
+</div>
+
+

@@ -1,0 +1,30 @@
+.wrapper{
+  display: grid;
+  height:calc(100vh - 64px);
+  /* overflow: hidden; */
+
+   /* align-items: center;
+  justify-items: center; */
+}
+
+.header{
+  grid-column: 1/4;
+  grid-row: 1/2;
+  height: 100%;
+  width: 100%;
+}
+
+.body{
+  margin: 10px;
+  grid-column: 1/4;
+
+  height: 100%;
+  width: 100%;
+}
+
+.footer{
+  grid-column: 1/2;
+}
+.placeholder{
+  grid-column: 3/4;
+}

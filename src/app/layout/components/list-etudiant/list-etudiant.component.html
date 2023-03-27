@@ -1,0 +1,10 @@
+<div class="listwrapper" >
+
+<ng-container *ngFor="let et of etudiantList">
+  <unetudiant [unetudiant]="et" (selected)="selectedEtudiant($event)"></unetudiant>
+</ng-container>
+
+
+</div>
+
+

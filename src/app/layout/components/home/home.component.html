@@ -1,0 +1,4 @@
+<button routerLink="/etudiants" type="button" class="btn btn-primary btn-lg " *ngIf="token.hasAuthority('role_test')">Etudiants</button>
+<button routerLink="/notes" type="button" class="btn btn-primary btn-lg " *ngIf="token.hasAuthority('role_test3')">Notes</button>
+<button routerLink="/notebymatiere" type="button" class="btn btn-primary btn-lg " *ngIf="token.hasAuthority('role_test4')"> Matieres</button>
+<button routerLink="/page-note" type="button" class="btn btn-primary btn-lg " *ngIf="token.hasAuthority('role_test2')"> Notes by etudiant</button>
