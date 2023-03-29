@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { TokenStorageService } from 'src/app/Security/services/token-storage.service';
 
@@ -8,6 +9,10 @@ import { TokenStorageService } from 'src/app/Security/services/token-storage.ser
 })
 export class HomeComponent {
 
-  constructor(public token:TokenStorageService){}
+  constructor(public token:TokenStorageService,private http:HttpClient){}
+
+  testError(){
+    this.http.get("http://localhost:8080/etudiant/test").subscribe();
+  }
 
 }

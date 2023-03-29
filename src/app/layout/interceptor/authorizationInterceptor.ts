@@ -1,21 +1,28 @@
 import { HttpHandlerFn, HttpHeaders, HttpRequest } from "@angular/common/http";
 import { inject } from "@angular/core";
 import { TokenStorageService } from "src/app/Security/services/token-storage.service";
-
+import { SnackBarServiceService } from "src/app/services/snack-bar-service.service";
+import {catchError,throwError} from 'rxjs'
 export const AuthorizationInterceptorFn = (req:HttpRequest<any>,
   next:HttpHandlerFn)=>{
 
     const loaderService=inject(TokenStorageService)
 
-    console.log("intercepted")
+    const snackBar=inject(SnackBarServiceService)
+
     if(loaderService.isLogged()){
       let header=new HttpHeaders({
         'Content-Type' : 'application/json',
         'Authorization' : 'Bearer ' + loaderService.getToken()
       })
       const cloned=req.clone({headers:header})
-      console.log(cloned)
-      return next(cloned);
+      return next(cloned).pipe(
+        catchError(err=>{
+          snackBar.openSnackBar(err.error.message,"fermer")
+          return throwError(err.error.message)
+        }))
+
+
     }
 
 

@@ -36,7 +36,7 @@ findAllEtudiants(){
 }
 
 selectedEtudiant(note:Etudiant){
-  // this.note=note
+  this.etudiant=note
   console.log(note)
 }
 
